@@ -1,30 +1,10 @@
-package Task2;
+package Work1.Task2;
 
 public class myList {
     private Node head=new Node(0, "尼克杨");
     public Node getHead() {
         return head;
     }
-    //根据id添加节点
-//    public void addNode(Node node){
-//        Node temp = head.next;
-//        boolean flag = true;
-//        while (temp.next!=null){
-//            if(node.id<= temp.id){//temp的id是从0开始增加的
-//                temp.pre.next = node;
-//                node.pre = temp.pre;
-//                node.next = temp;
-//                temp.pre = node;
-//                flag = false;
-//                break;
-//            }
-//            temp = temp.next;
-//        }
-//        if (flag){//没满足以上条件，这添加在最后
-//            temp.next = node;
-//            node.pre=temp;
-//        }
-//    }
     public void addNode(Node node) {
         Node temp=head;
         boolean flag=false; //用于标识链表中是否已经存在新节点的顺序
@@ -37,10 +17,11 @@ public class myList {
                 flag=true;
             }
             temp=temp.next;
-        }
+        }//找到要插入的位置
         if(flag) {
             System.out.println("节点存在，添加失败");
-        }else {
+        }
+        else {
             node.next=temp.next;
             if(temp.next!=null) {   //如果temp的下一个节点不为空，则temp的下一个节点的前一个节点为新节点
                 temp.next.pre=node;//
@@ -50,6 +31,8 @@ public class myList {
         }
 
     }
+    //
+
     public void delNode(Node node){
         Node temp = head.next;
         boolean flag=false;
@@ -106,6 +89,7 @@ public class myList {
         }
     }
 }
+
 class Node{
     public int id;
     public String name;

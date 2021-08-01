@@ -1,6 +1,6 @@
-package Task1;
-//减法类
-public class Subtraction {
+package Work1.Task1;
+
+public class Multiplication {
     private double A;
     private double B;
 
@@ -12,7 +12,7 @@ public class Subtraction {
         B = b;
     }
 
-    public double domain4(double A,double B){
-        return A-B;
+    public double domain3(double A,double B){
+        return A*B;
     }
 }

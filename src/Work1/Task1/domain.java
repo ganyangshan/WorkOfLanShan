@@ -1,4 +1,4 @@
-package Task1;
+package Work1.Task1;
 
 public class domain {
     public static void main(String[] args) {

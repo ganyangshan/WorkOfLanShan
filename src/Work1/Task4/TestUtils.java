@@ -1,4 +1,4 @@
-package Task4;
+package Work1.Task4;
 
 /**
  * * 方法一：判断字符串是否全是数字

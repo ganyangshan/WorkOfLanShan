@@ -1,6 +1,6 @@
-package Task1;
-
-public class Multiplication {
+package Work1.Task1;
+//加法类
+public class Addition {
     private double A;
     private double B;
 
@@ -12,7 +12,7 @@ public class Multiplication {
         B = b;
     }
 
-    public double domain3(double A,double B){
-        return A*B;
+    public double domain1(double A,double B){
+        return A+B;
     }
 }

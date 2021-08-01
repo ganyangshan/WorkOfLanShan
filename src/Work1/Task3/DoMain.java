@@ -1,4 +1,4 @@
-package Task3;
+package Work1.Task3;
 
 public class DoMain {
     public static void main(String[] args) throws InterruptedException {
