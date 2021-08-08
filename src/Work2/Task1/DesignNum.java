@@ -24,7 +24,7 @@ public class DesignNum {
                 }
 
                 try {
-                    wait();
+                    wait();//调用wait后释放锁，并该线程进入等待池，当调用notify时该锁进入锁池，进行线程的争夺
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

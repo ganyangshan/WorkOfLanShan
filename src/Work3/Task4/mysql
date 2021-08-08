@@ -1,0 +1,30 @@
+- 学生表：student(学号,学生姓名,出生年月,性别)
+- 成绩表：score(学号,课程号,成绩)
+- 课程表：course(课程号,课程名称,教师号)
+- 教师表：teacher(教师号,教师姓名)
+create table student(
+    id int primary key not null auto_increment,
+    name varchar(20),
+    birthday time,
+    sex varchar(5)
+    );
+create table score(
+    id int,
+    courseid int,
+    greade int,
+    constraint fk_score_student
+    doreign key(id) references student(id)
+    );
+create table course(
+    courseid int primary key not null,
+    coursename varchar(10),
+    teacherid int,
+    constraint fk_course_teacher
+    foreign key(teacherid) references teacher(teacherid)
+    );
+create table teacher(
+    teacherid int primary key not null auto_increment,
+    teachername varchar(20)
+    );
+
+

@@ -1,0 +1,35 @@
+-- 使用第四题的表完成一下题目
+--
+-- - 查询各科成绩最高和最低的分， 以如下的形式显示：课程号，最高分，最低分
+-- - 查询学生的总成绩并进行排名
+-- - 查询平均成绩大于60分的学生的学号和平均成绩
+
+
+-- - 查询各科成绩最高和最低的分， 以如下的形式显示：课程号，最高分，最低分
+select
+    courseid ,max(greade),min(greade)
+from
+    score
+group by
+    courseid;
+-- - 查询学生的总成绩并进行排名
+
+select
+    id,sum(greade) total
+from
+    score
+group by
+    id
+order by
+    total;
+-- - 查询平均成绩大于60分的学生的学号和平均成绩
+select
+    id,avg(greade) avg_greade
+from
+    score
+group by
+    id
+having
+    avg_greade>60
+order by
+    avg_greade;
