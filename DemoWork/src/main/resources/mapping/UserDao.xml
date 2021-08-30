@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--必须顶行 否则报错-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--映射文件的目录必须与对应的DAO接口相同-->
+
+<mapper namespace="com.example.demoex.mapper.UserDao">    <!--dao接口的全限定名称-->
+    <select id="findAll" resultType="com.example.demoex.bean.User"> <!-- resultMap调用前面的resultMap id="studentMap"-->
+        select * from user
+    </select>
+    <insert id="insertUser" parameterType="com.example.demoex.bean.User">
+        insert into user values (#{name},#{sex},#{background},#{hobby},#{password})
+    </insert>
+    <select id="login" parameterType="com.example.demoex.bean.User" resultType="com.example.demoex.bean.User"> <!-- resultMap调用前面的resultMap id="studentMap"-->
+        select * from user where name=#{name} and password=#{password}
+    </select>
+    <update id="update" parameterType="com.example.demoex.bean.User">
+        update user set name=#{name} and sex=#{sex} and background=#{background} and hobby=#{hobby} and password=#{password}
+    </update>
+    <delete id="del" parameterType="com.example.demoex.bean.User">
+        DELETE FROM user WHERE name =#{name} and password=#{password};
+    </delete>
+
+</mapper>
+
+

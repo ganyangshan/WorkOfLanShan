@@ -1,0 +1,17 @@
+#spring:
+#  datasource:
+#    username: root
+#    password: 123456
+#    url: jdbc:mysql://localhost:3306/anjoub?serverTimezone=UTF&useUnicode=true&characterEncoding-utf-8
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/anjoub?characterEncoding=utf-8
+mybatis:
+  config-location: classpath:mybatis.xml
+  mapper-locations: classpath:com/example/demoex/mapper/*.xml
+

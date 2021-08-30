@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--   setting控制mybatis全局行为  -->
+    <settings>
+<!--        设置mybatis输出日志-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+<!--    mybatis的主配置文件-->
+    <environments default="mysql">
+        <environment id="mysql" >
+<!--            事务类型JDBC-->
+            <transactionManager type="JDBC" />
+<!--            配置数据源-->
+            <dataSource type="POOLED">
+                <!--下面几行诗配置数据库相关的东西，用户名以及密码等-->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://localhost:3306/anjoub?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC" />
+                <property name="username" value="root" />
+                <property name="password" value="123456" />
+            </dataSource>
+        </environment>
+    </environments>
+<!--指定映射配置文件是是位置==========映射文件是指每个DAO独立的配置文件-->
+    <mappers>
+        <mapper resource="mapping/UserDao.xml" />
+    </mappers>
+
+</configuration>
+
